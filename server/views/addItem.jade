@@ -1,0 +1,17 @@
+extends layout
+
+block content
+ form(method="POST" action="/createOrder")
+    input(type="text" placeholder="Food Item" name="FoodItem")
+    input(type="text" placeholder="Customer Name" name="CustomerName")
+    input(type="text" placeholder="Phone Number" name="PhoneNumber")
+    select(placeholder="Pickup/Delivery" name="PickupOrDelivery") Pickup/Delivery
+      option(value="0") Pickup
+      option(value="1") Delivery
+    input(type="text" placeholder="Address" name="Address")
+    input(type="text" placeholder="Pick up time" name="PickUpTime")
+    input(type="text" placeholder="Allergies" name="Allergies")
+    input(type="text" placeholder="Special Instructions" name="SpecialInstructions")
+
+
+    button(type="submit") add
