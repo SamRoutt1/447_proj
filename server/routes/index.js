@@ -44,7 +44,7 @@ Allergies.forEach(function(allergy, index) {
 		TimeStamp: new Date().getTime(),
 		PickupOrDelivery: PickupOrDelivery,
 		Address: Address,
-		PickUpTime: PickUpTime,
+		PickUpDeliveryTime: PickUpTime,
 		Allergies: Allergies,
 		SpecialInstructions: SpecialInstructions
 	});

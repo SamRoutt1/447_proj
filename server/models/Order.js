@@ -8,7 +8,7 @@ var OrderSchema = new Schema({
 	TimeStamp: Date,
 	PickupOrDelivery: Boolean,
 	Address: String,
-	PickUpTime: Date,
+	PickUpDeliveryTime: Date,
 	Allergies: Array,
 	SpecialInstructions: String
 });
