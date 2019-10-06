@@ -9,7 +9,8 @@ block content
       option(value="0") Pickup
       option(value="1") Delivery
     input(type="text" placeholder="Address" name="Address")
-    input(type="text" placeholder="Pick up time" name="PickUpTime")
+    label(for='PickUpDeliveryTime') Choose a time for your Pickup/Delivery:
+    input#PickUpDeliveryTime(type='time', name='PickUpDeliveryTime')
     input(type="text" placeholder="Allergies" name="Allergies")
     input(type="text" placeholder="Special Instructions" name="SpecialInstructions")
 

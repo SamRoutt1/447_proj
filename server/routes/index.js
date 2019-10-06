@@ -29,13 +29,14 @@ router.post('/createOrder', function(req, res, next) {
 	var PhoneNumber = req.body.PhoneNumber
 	var PickupOrDelivery = req.body.PickupOrDelivery
 	var Address = req.body.Address
-	var PickUpTime = req.body.PickUpTime
+	var PickUpDeliveryTime = req.body.PickUpDeliveryTime
 	var Allergies = req.body.Allergies.split(',')
 	var SpecialInstructions = req.body.SpecialInstructions
 
-Allergies.forEach(function(allergy, index) {
-	Allergies[index] = allergy.trim()
-});
+
+	Allergies.forEach(function(allergy, index) {
+		Allergies[index] = allergy.trim()
+	});
 
 	var newOrder = new Order({
 		FoodItem: FoodItem,
@@ -44,13 +45,13 @@ Allergies.forEach(function(allergy, index) {
 		TimeStamp: new Date().getTime(),
 		PickupOrDelivery: PickupOrDelivery,
 		Address: Address,
-		PickUpDeliveryTime: PickUpTime,
+		PickUpDeliveryTime: PickUpDeliveryTime,
 		Allergies: Allergies,
 		SpecialInstructions: SpecialInstructions
 	});
-
+	newOrder.save();
 	console.log(newOrder);
-	res.redirect('/')
+	res.redirect('/');
 
 });
 

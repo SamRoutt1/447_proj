@@ -4,23 +4,21 @@ block content
   h1= title
   p Welcome to #{title}
     button(onclick="window.location.href='/addItem'") add Food
--var orders = order
- div
-  table.table.table-hover
-   thead
-    tr: th Orders
-    //th id
-    th Food Item
-    th Customer Name
-    th Delivery Time
-    th Pickup or Delivery
+  -var orders = order
+  div
+    table.table.table-hover
+    thead
+      tr: th OrderID | 
+       th Food Item | 
+       th Customer Name | 
+       th Delivery Time | 
+       th Pickup or Delivery
     tbody
-      each food in orders
-        tr
-          //td #{food._id}
-          td #{food._source.variety}
-          td #{food._source.name}
-          td #{food._source.category}
-          td
-            a(href="#{food._source.url}" target="_blank") #{food._source.manufacturer}
-          //td=JSON.stringify(seed.prices)
+    each food in orders
+     tr
+        //td #{food._id}
+        td #{food.FoodItem}
+        td #{food.CustomerName}
+        td #{food.PickUpDeliveryTime}
+        td #{food.PickupOrDelivery}
+        //td=JSON.stringify(seed.prices)
