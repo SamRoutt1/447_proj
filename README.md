@@ -70,7 +70,7 @@ git push origin SamRoutt/BranchName
 
 
 ___________________________________________________________
-##server side setup
+## Server side setup
 
 first set up mongodb
 either in docker container or on your computer or mongodb atlas (cloud)
