@@ -12,13 +12,13 @@ block content
        th Food Item | 
        th Customer Name | 
        th Delivery Time | 
-       th Pickup or Delivery
+       th Pickup or Delivery | 
     tbody
     each food in orders
      tr
-        //td #{food._id}
-        td #{food.FoodItem}
-        td #{food.CustomerName}
-        td #{food.PickUpDeliveryTime}
-        td #{food.PickupOrDelivery}
+        td #{food._id} 
+        td #{food.FoodItem} 
+        td #{food.CustomerName} 
+        td #{food.PickUpDeliveryTime} 
+        td #{food.PickupOrDelivery} 
         //td=JSON.stringify(seed.prices)

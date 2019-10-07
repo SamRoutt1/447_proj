@@ -67,3 +67,28 @@ git status
 git commit -m "Relevant commit message - 1"
 git push origin SamRoutt/BranchName
 ```
+
+
+___________________________________________________________
+##server side setup
+
+first set up mongodb
+either in docker container or on your computer or mongodb atlas (cloud)
+
+```bash
+cd server
+npm i
+```
+
+open **app.js**
+
+replace 
+```
+mongoose.connect('mongodb://<PATHNAME>');
+```
+
+by default it should be set to *localhost/FoodQueue* the name of the database I made you can leave it there by default if you are running from docker or your computer
+
+```
+npm start
+```
