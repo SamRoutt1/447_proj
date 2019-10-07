@@ -82,13 +82,15 @@ npm i
 
 open **app.js**
 
-replace 
+replace this line with the path of your database
 ```
 mongoose.connect('mongodb://<PATHNAME>');
 ```
 
 by default it should be set to *localhost/FoodQueue* the name of the database I made you can leave it there by default if you are running from docker or your computer
 
+
+finally to startup backend
 ```
 npm start
 ```
