@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Route, Switch} from 'react-router-dom';
+import Login from './components/Login';
 import Nav from './Nav';
 import Home from './components/Home';
 import Page3 from './components/page3';
@@ -17,6 +18,7 @@ class Routes extends Component {
           </div>
           <div className="content">
             <Switch>
+              <Route exact path="/login" component={Login} />
               <Route exact path="/" component={Home} />
               <Route exact path="/page2" component={Page2} />
               <Route exact path="/page3" component={Page3} />

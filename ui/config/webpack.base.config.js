@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const APP_DIR = path.resolve(__dirname, '../src');
 
@@ -23,6 +24,10 @@ module.exports = {
             'css-loader',
             'sass-loader'
           ]
+        },
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader'],
         }
         ]
     },
@@ -30,6 +35,9 @@ module.exports = {
         new HtmlWebpackPlugin({ 
         template: './src/index.html', 
         filename: './index.html' 
-        })
+        }),
+        new CopyWebpackPlugin([{
+          from: 'src/env.js'
+        }])
     ]
 }

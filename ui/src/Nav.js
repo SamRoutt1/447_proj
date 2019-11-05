@@ -6,7 +6,7 @@ class Nav extends Component {
   render() {
       return (
           <div>
-            <div className="nav">
+            <div className="myNav">
               <h2>Our big beautiful project</h2>
               <NavLink to="/">
                 Home
@@ -16,6 +16,9 @@ class Nav extends Component {
               </NavLink>
               <NavLink to="/page3">
                 Page 3
+              </NavLink>
+              <NavLink to="/login">
+                Logout
               </NavLink>
             </div> 
           </div>
