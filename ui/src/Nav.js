@@ -11,8 +11,8 @@ class Nav extends Component {
               <NavLink to="/">
                 Home
               </NavLink>
-              <NavLink to="/page2">
-                Page 2
+              <NavLink to="/order">
+                Order
               </NavLink>
               <NavLink to="/page3">
                 Page 3

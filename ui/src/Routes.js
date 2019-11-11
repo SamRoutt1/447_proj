@@ -4,7 +4,7 @@ import Login from './components/Login';
 import Nav from './Nav';
 import Home from './components/Home';
 import Page3 from './components/page3';
-import Page2 from './components/page2';
+import Order from './components/Order';
 //import './sass/routes.scss';
 
 class Routes extends Component {
@@ -20,7 +20,7 @@ class Routes extends Component {
             <Switch>
               <Route exact path="/login" component={Login} />
               <Route exact path="/" component={Home} />
-              <Route exact path="/page2" component={Page2} />
+              <Route exact path="/order" component={Order} />
               <Route exact path="/page3" component={Page3} />
             </Switch>
           </div>
