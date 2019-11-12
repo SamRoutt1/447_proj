@@ -20,7 +20,7 @@ router.post('/', (req, res, next) => {
     FoodItem: req.body.food,
     CustomerName: req.body.name,
     PhoneNumber: req.body.phone,
-    PickupOrDeliver: req.body.pickOrDel,
+    PickupOrDelivery: req.body.pickOrDel,
     Address: req.body.address
   })
   newOrder

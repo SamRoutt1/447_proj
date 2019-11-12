@@ -6,7 +6,7 @@ var OrderSchema = new Schema({
 	CustomerName: String,
 	PhoneNumber: String,
 	TimeStamp: Date,
-	PickupOrDelivery: Boolean,
+	PickupOrDelivery: String,
 	Address: String,
 	PickUpDeliveryTime: String,
 	Allergies: Array,

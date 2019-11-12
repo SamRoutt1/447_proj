@@ -3,7 +3,7 @@ import {Route, Switch} from 'react-router-dom';
 import Login from './components/Login';
 import Nav from './Nav';
 import Home from './components/Home';
-import Page3 from './components/page3';
+import Orders from './components/Orders';
 import Order from './components/Order';
 //import './sass/routes.scss';
 
@@ -18,10 +18,10 @@ class Routes extends Component {
           </div>
           <div className="content">
             <Switch>
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" component={Login} />
+              {/*<Route exact path="/" component={Home} />*/}
               <Route exact path="/order" component={Order} />
-              <Route exact path="/page3" component={Page3} />
+              <Route exact path="/orders" component={Orders} />
             </Switch>
           </div>
         </div>

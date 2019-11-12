@@ -2,14 +2,18 @@ import React, {Component} from 'react';
 import { Form, Button } from 'react-bootstrap';
 
 class Order extends Component {
+
   constructor(props){
     super(props);
     this.state = {
-      food: '',
-      name: '',
-      phone: '',
-      pickOrDel: '',
-      address: ''
+      order: {
+        food: '',
+        name: '',
+        phone: '',
+        pickOrDel: 'Pickup',
+        address: ''
+      },
+      submitted: false
     }
     this.onSubmit = this.onSubmit.bind(this);
     this.onFoodChange = this.onFoodChange.bind(this);
@@ -27,48 +31,61 @@ class Order extends Component {
       headers:{
         'Content-Type':'application/json'
       },
-      body: JSON.stringify(this.state)
+      body: JSON.stringify(this.state.order)
     })
       .then(resp => resp.json())
       .then(data => {
+        this.setState({
+          submitted: true
+        });
         console.log('Order Data: ', data);
       })
   }
 
   onFoodChange(event){
+    const newOrder = {...this.state.order};
+    newOrder.food = event.target.value;
     this.setState({
-      food: event.target.value
+      order: newOrder
     });
   }
 
   onNameChange(event){
+    const newOrder = {...this.state.order};
+    newOrder.name = event.target.value;
     this.setState({
-      name: event.target.value
+      order: newOrder
     });
   }
 
   onPhoneChange(event){
+    const newOrder = {...this.state.order};
+    newOrder.phone = event.target.value;
     this.setState({
-      phone: event.target.value
+      order: newOrder
     });
   }
 
   onAddressChange(event){
+    const newOrder = {...this.state.order};
+    newOrder.address = event.target.value;
     this.setState({
-      address: event.target.value
+      order: newOrder
     });
   }
 
   onPickOrDelChange(event){
+    const newOrder = {...this.state.order};
+    newOrder.pickOrDel = event.target.value;
     this.setState({
-      pickOrDel: event.target.value
+      order: newOrder
     });
   }
 
   render() {
     return(
       <div>
-        <h1>Order Form</h1>
+        <h2>Order Form</h2>
         <Form onSubmit={this.onSubmit}>
           <Form.Group >
             <Form.Label>Food Item</Form.Label>
@@ -108,8 +125,8 @@ class Order extends Component {
               value={this.state.pickOrDel}
               onChange={this.onPickOrDelChange}
             >
-              <option>pickup</option>
-              <option>delivery</option>
+              <option>Pickup</option>
+              <option>Delivery</option>
             </Form.Control>
           </Form.Group>
 
@@ -127,6 +144,11 @@ class Order extends Component {
             Submit
           </Button>
         </Form>
+        {this.state.submitted ? (
+          <p>Your order had been submitted.</p>
+        ) : (
+          <p></p>
+        )}
       </div>
     );
   }

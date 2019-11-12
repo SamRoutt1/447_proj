@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Form, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 class Login extends Component {
 
@@ -29,6 +30,7 @@ class Login extends Component {
       .then(resp => resp.json())
       .then(data => {
         console.log('New User Data: ', data);
+        window.location.pathname = '/orders'
       })
   }
 
@@ -47,7 +49,7 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <h1>Login</h1>
+        <h2>Login</h2>
         <Form onSubmit={this.onSubmit}>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
@@ -73,6 +75,8 @@ class Login extends Component {
             Submit
           </Button>
         </Form>
+        <br />
+        <Link to="/order">Sign in as guest</Link>
       </div>
     );
   };

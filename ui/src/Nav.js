@@ -7,17 +7,20 @@ class Nav extends Component {
       return (
           <div>
             <div className="myNav">
-              <h2>Our big beautiful project</h2>
-              <NavLink to="/">
+              <h1>Food Queue</h1>
+              {/*<NavLink to="/">
                 Home
               </NavLink>
               <NavLink to="/order">
                 Order
               </NavLink>
-              <NavLink to="/page3">
-                Page 3
-              </NavLink>
-              <NavLink to="/login">
+              <NavLink to="/orders">
+                Orders
+              </NavLink>*/}
+              <div />
+              <div />
+              <div />
+              <NavLink to="/">
                 Logout
               </NavLink>
             </div> 
