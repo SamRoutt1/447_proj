@@ -7,7 +7,8 @@ var UserSchema = new Schema({
   Name: String,
   PhoneNumber: String,
   Address: String,
-  Allergies: String
+  Allergies: String,
+  Admin: Boolean
 });
 
 var User = mongoose.model('users', UserSchema);

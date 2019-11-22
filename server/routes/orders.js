@@ -5,13 +5,20 @@ Orders = require('../models/Order');
 
 /* GET orders listing. */
 router.get('/', function(req, res, next) {
-  Orders.find()
-    .then(orders => {
-      res.json(orders);
-    })
-    .catch(err => {
-      console.log('GET ORDER ERROR: ', err);
-    })
+  
+  if (!req.session.user) {
+    res.json("unauthorized")
+  }
+  else {
+    Orders.find()
+      .then(orders => {
+        res.json(orders);
+      })
+      .catch(err => {
+        console.log('GET ORDER ERROR: ', err);
+      })
+  }
+
 });
 
 /* POST order. */

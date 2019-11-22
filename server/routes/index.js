@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Order = require('../models/Order');
+var User = require('../models/User');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -52,6 +53,24 @@ router.post('/createOrder', function(req, res, next) {
 	newOrder.save();
 	console.log(newOrder);
 	res.redirect('/');
+
+});
+
+router.post('/login', function(req, res, next) {
+	var UserData = {
+		Email: req.body.email,
+		Password: req.body.password
+	}
+
+	User.findOne({'Email': UserData.Email}, (err, docs) => {
+		if (err) return res.send("error");
+		else if (docs == null) return "invalid email"; //if invalid email
+		else if (docs.password != UserData.Password) return "incorrect password"; //if invalid password
+		else if (docs.password == UserData.Password) return docs; //if login successfull
+	}).exec( (err, user) => {
+		req.session.user = user;
+		res.redirect('/profile');
+	});
 
 });
 
